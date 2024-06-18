@@ -15,6 +15,22 @@ class LogoView: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Tip Splitter"
+        label.font = ThemeFont.titleBold
+        label.textColor = ThemeColor.textColor
+        return label
+    }()
+    
+    private lazy var horizontalStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [logoImageView, titleLabel])
+        stackView.axis = .horizontal
+        stackView.spacing = 8.0
+        stackView.alignment = .center
+        return stackView
+    }()
 
     init() {
         super.init(frame: .zero)
@@ -26,12 +42,15 @@ class LogoView: UIView {
     }
     
     private func setupLayout() {
-        addSubview(logoImageView)
+        addSubview(horizontalStackView)
+        
+        horizontalStackView.snp.makeConstraints { constraintMaker in
+            constraintMaker.top.bottom.equalToSuperview()
+            constraintMaker.centerX.equalToSuperview()
+        }
         
         logoImageView.snp.makeConstraints { constraintMaker in
-            constraintMaker.centerX.equalTo(snp.centerX)
-            constraintMaker.centerY.equalTo(snp.centerY)
-            constraintMaker.height.equalTo(snp.height)
+            constraintMaker.height.equalTo(logoImageView.snp.width).dividedBy(0.8)
         }
     }
     
