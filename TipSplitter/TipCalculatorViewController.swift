@@ -21,7 +21,6 @@ class TipCalculatorViewController: UIViewController {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 36
-        stackView.backgroundColor = .systemPink
         return stackView
     }()
 
