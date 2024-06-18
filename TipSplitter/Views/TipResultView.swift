@@ -48,8 +48,6 @@ class TipResultView: UIView {
         stackView.axis = .vertical
         stackView.spacing = 8.0
         stackView.distribution = .fill
-        stackView.backgroundColor = .white
-        stackView.layer.cornerRadius = 12.0
         return stackView
     }()
     
@@ -64,6 +62,7 @@ class TipResultView: UIView {
 
     init() {
         super.init(frame: .zero)
+        setupLayout()
         addSubviews()
         setupConstraints()
     }
@@ -72,14 +71,20 @@ class TipResultView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setupLayout() {
+        backgroundColor = .white
+        layer.cornerRadius = 12.0
+        addShadow(offset: .init(width: 0, height: 3), color: ThemeColor.textColor ?? .black, radius: 12.0, opacity: 0.1)
+    }
+    
     private func addSubviews() {
-        backgroundColor = .blue
         addSubview(verticalStackView)
     }
     
     private func setupConstraints() {
         verticalStackView.snp.makeConstraints { constraintMaker in
-            constraintMaker.top.bottom.leading.trailing.equalToSuperview()
+            constraintMaker.top.leading.equalToSuperview().offset(16)
+            constraintMaker.bottom.trailing.equalToSuperview().offset(-16)
         }
         
         totalBillView.snp.makeConstraints { constraintMaker in
