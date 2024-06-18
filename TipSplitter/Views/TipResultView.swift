@@ -54,11 +54,11 @@ class TipResultView: UIView {
     }()
     
     private lazy var horizontalStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [totalBillView, totalTipView])
+        let stackView = UIStackView(arrangedSubviews: [totalBillView, UIView(), totalTipView])
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.spacing = 8.0
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         return stackView
     }()
 
