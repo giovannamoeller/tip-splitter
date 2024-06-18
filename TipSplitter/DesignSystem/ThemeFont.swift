@@ -23,4 +23,8 @@ struct ThemeFont {
     static var titleBold: UIFont {
         return .systemFont(ofSize: 22.0, weight: .bold)
     }
+    
+    static var largeTitleBold: UIFont {
+        return .systemFont(ofSize: 44.0, weight: .bold)
+    }
 }

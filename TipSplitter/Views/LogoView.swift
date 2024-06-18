@@ -53,7 +53,7 @@ class LogoView: UIView {
         }
         
         logoImageView.snp.makeConstraints { constraintMaker in
-            constraintMaker.height.equalTo(logoImageView.snp.width).dividedBy(0.8)
+            constraintMaker.height.equalTo(logoImageView.snp.width)
         }
     }
     

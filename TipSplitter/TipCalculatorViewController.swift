@@ -19,7 +19,7 @@ class TipCalculatorViewController: UIViewController {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [logoView, tipResultView, billInputView, tipInputView, splitInputView])
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.spacing = 36
         return stackView
     }()
@@ -41,6 +41,22 @@ class TipCalculatorViewController: UIViewController {
             constraintMaker.trailing.equalTo(view.snp.trailingMargin).offset(-16)
             constraintMaker.bottom.equalTo(view.snp.bottomMargin).offset(-16)
             constraintMaker.top.equalTo(view.snp.topMargin).offset(16)
+        }
+        
+        logoView.snp.makeConstraints { constraintMaker in
+            constraintMaker.height.equalTo(84)
+        }
+        
+        billInputView.snp.makeConstraints { constraintMaker in
+            constraintMaker.height.equalTo(84)
+        }
+        
+        tipInputView.snp.makeConstraints { constraintMaker in
+            constraintMaker.height.equalTo(84)
+        }
+        
+        splitInputView.snp.makeConstraints { constraintMaker in
+            constraintMaker.height.equalTo(84)
         }
     }
 }

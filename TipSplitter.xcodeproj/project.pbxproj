@@ -28,6 +28,7 @@
 		48E3CFD82C211F5300A31BE2 /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFD72C211F5300A31BE2 /* SplitInputView.swift */; };
 		48E3CFDB2C21252F00A31BE2 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFDA2C21252F00A31BE2 /* ThemeColor.swift */; };
 		48E3CFDD2C21253600A31BE2 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFDC2C21253600A31BE2 /* ThemeFont.swift */; };
+		48E3CFDF2C21B66F00A31BE2 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		48E3CFD72C211F5300A31BE2 /* SplitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitInputView.swift; sourceTree = "<group>"; };
 		48E3CFDA2C21252F00A31BE2 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		48E3CFDC2C21253600A31BE2 /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
+		48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				48E3CFD32C211F3E00A31BE2 /* BillInputView.swift */,
 				48E3CFD52C211F4A00A31BE2 /* TipInputView.swift */,
 				48E3CFD72C211F5300A31BE2 /* SplitInputView.swift */,
+				48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				48E3CFDB2C21252F00A31BE2 /* ThemeColor.swift in Sources */,
 				48E3CFD42C211F3E00A31BE2 /* BillInputView.swift in Sources */,
 				48E3CFD02C211F2000A31BE2 /* LogoView.swift in Sources */,
+				48E3CFDF2C21B66F00A31BE2 /* AmountView.swift in Sources */,
 				48E3CF8D2C2117A400A31BE2 /* AppDelegate.swift in Sources */,
 				48E3CFDD2C21253600A31BE2 /* ThemeFont.swift in Sources */,
 				48E3CF8F2C2117A400A31BE2 /* SceneDelegate.swift in Sources */,
