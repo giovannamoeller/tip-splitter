@@ -9,7 +9,7 @@ import UIKit
 
 class BillInputView: UIView {
     
-    private var headerLabel = SplittedLabelView(primaryText: "Enter", secondaryText: "your bill")
+    private var headerLabel = SplittedLabelView(topText: "Enter", bottomText: "your bill")
     
     private lazy var textFieldContainerView: UIView = {
         let view = UIView()
