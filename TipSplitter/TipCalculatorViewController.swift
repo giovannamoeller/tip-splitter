@@ -19,6 +19,7 @@ class TipCalculatorViewController: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [logoView, tipResultView, billInputView, tipInputView, splitInputView])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
+        stackView.spacing = 36
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.backgroundColor = .systemPink
         return stackView
