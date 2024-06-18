@@ -10,6 +10,11 @@ import UIKit
 class SplitInputView: UIView {
     
     private var headerLabelView = SplittedLabelView(topText: "Split", bottomText: "the total")
+    private var splitQuantity: Int = 1 {
+        didSet {
+            quantityLabel.text = "\(splitQuantity)"
+        }
+    }
     
     private lazy var decrementButton: UIButton = {
         let button = UIButton()
@@ -17,6 +22,7 @@ class SplitInputView: UIView {
         button.setTitle("-", for: .normal)
         button.titleLabel?.font = ThemeFont.titleBold
         button.addRoundedCorners(corners: [.layerMinXMaxYCorner, .layerMinXMinYCorner], radius: 8.0)
+        button.addTarget(self, action: #selector(didTapDecrementButton), for: .touchUpInside)
         return button
     }()
     
@@ -26,12 +32,13 @@ class SplitInputView: UIView {
         button.setTitle("+", for: .normal)
         button.titleLabel?.font = ThemeFont.titleBold
         button.addRoundedCorners(corners: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner], radius: 8.0)
+        button.addTarget(self, action: #selector(didTapIncrementButton), for: .touchUpInside)
         return button
     }()
     
     private lazy var quantityLabel: UILabel = {
         let label = UILabel()
-        label.text = "1"
+        label.text = "\(splitQuantity)"
         label.font = ThemeFont.titleBold
         label.textAlignment = .center
         label.backgroundColor = .white
@@ -70,6 +77,16 @@ class SplitInputView: UIView {
         horizontalStackView.snp.makeConstraints { constraintMaker in
             constraintMaker.top.trailing.bottom.equalToSuperview()
             constraintMaker.height.equalTo(52.0)
+        }
+    }
+    
+    @objc private func didTapIncrementButton() {
+        splitQuantity += 1
+    }
+    
+    @objc private func didTapDecrementButton() {
+        if splitQuantity > 1 {
+            splitQuantity -= 1
         }
     }
     

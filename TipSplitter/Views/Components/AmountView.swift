@@ -40,8 +40,7 @@ class AmountView: UIView {
         let stackView = UIStackView(arrangedSubviews: [totalPerPersonLabel, amountPerPersonLabel])
         stackView.axis = .vertical
         stackView.alignment = alignment
-        stackView.spacing = 2.0
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         return stackView
     }()
 
@@ -65,6 +64,7 @@ class AmountView: UIView {
     private func setupConstraints() {
         verticalStackView.snp.makeConstraints { constraintMaker in
             constraintMaker.edges.equalToSuperview()
+            constraintMaker.height.equalTo(64.0)
         }
     }
     

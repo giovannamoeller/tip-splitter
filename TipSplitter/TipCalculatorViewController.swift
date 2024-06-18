@@ -19,8 +19,7 @@ class TipCalculatorViewController: UIViewController {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [logoView, tipResultView, billInputView, tipInputView, splitInputView])
         stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.spacing = 36
+        stackView.spacing = 36.0
         return stackView
     }()
 
@@ -32,20 +31,34 @@ class TipCalculatorViewController: UIViewController {
     }
     
     private func addSubviews() {
-        stackView.backgroundColor = .red
         view.addSubview(stackView)
     }
     
     private func setupConstraints() {
         stackView.snp.makeConstraints { constraintMaker in
+            constraintMaker.top.equalTo(view.snp.topMargin).offset(-16.0)
             constraintMaker.leading.equalTo(view.snp.leadingMargin).offset(16)
             constraintMaker.trailing.equalTo(view.snp.trailingMargin).offset(-16)
-            constraintMaker.bottom.equalTo(view.snp.bottomMargin)
-            constraintMaker.top.equalTo(view.snp.topMargin).offset(-16.0)
         }
         
         logoView.snp.makeConstraints { constraintMaker in
-            constraintMaker.height.equalTo(52.0)
+            constraintMaker.height.equalTo(64.0)
+        }
+        
+        tipResultView.snp.makeConstraints { constraintMaker in
+            constraintMaker.height.equalTo(220.0)
+        }
+        
+        tipInputView.snp.makeConstraints { constraintMaker in
+            constraintMaker.height.equalTo(120.0)
+        }
+        
+        splitInputView.snp.makeConstraints { constraintMaker in
+            constraintMaker.height.equalTo(60.0)
+        }
+        
+        billInputView.snp.makeConstraints { constraintMaker in
+            constraintMaker.height.equalTo(60.0)
         }
     }
 }

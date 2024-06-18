@@ -47,15 +47,12 @@ class TipResultView: UIView {
         let stackView = UIStackView(arrangedSubviews: [totalPerPersonLabel, amountPerPersonLabel, horizontalLineView, horizontalStackView])
         stackView.axis = .vertical
         stackView.spacing = 8.0
-        stackView.distribution = .fill
         return stackView
     }()
     
     private lazy var horizontalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [totalBillView, UIView(), totalTipView])
         stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.spacing = 8.0
         stackView.distribution = .fillEqually
         return stackView
     }()
@@ -83,8 +80,10 @@ class TipResultView: UIView {
     
     private func setupConstraints() {
         verticalStackView.snp.makeConstraints { constraintMaker in
-            constraintMaker.top.leading.equalToSuperview().offset(16)
-            constraintMaker.bottom.trailing.equalToSuperview().offset(-16)
+            constraintMaker.top.equalTo(snp.top).offset(16)
+            constraintMaker.leading.equalTo(snp.leading).offset(16)
+            constraintMaker.trailing.equalTo(snp.trailing).offset(-16)
+            constraintMaker.bottom.equalTo(snp.bottom).offset(-16)
         }
         
         horizontalLineView.snp.makeConstraints { constraintMaker in
