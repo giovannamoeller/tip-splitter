@@ -32,6 +32,7 @@
 		48E3CFE22C21B9FF00A31BE2 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE12C21B9FF00A31BE2 /* UIView+.swift */; };
 		48E3CFE42C22128D00A31BE2 /* SplittedLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE32C22128D00A31BE2 /* SplittedLabelView.swift */; };
 		48E3CFE72C221D1600A31BE2 /* TipPercentageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE62C221D1600A31BE2 /* TipPercentageButton.swift */; };
+		48E3CFEA2C22270300A31BE2 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE92C22270300A31BE2 /* Tip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		48E3CFE12C21B9FF00A31BE2 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		48E3CFE32C22128D00A31BE2 /* SplittedLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplittedLabelView.swift; sourceTree = "<group>"; };
 		48E3CFE62C221D1600A31BE2 /* TipPercentageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPercentageButton.swift; sourceTree = "<group>"; };
+		48E3CFE92C22270300A31BE2 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		48E3CF8B2C2117A400A31BE2 /* TipSplitter */ = {
 			isa = PBXGroup;
 			children = (
+				48E3CFE82C2226F700A31BE2 /* Models */,
 				48E3CFE02C21B9F700A31BE2 /* Extensions */,
 				48E3CFD92C21252200A31BE2 /* DesignSystem */,
 				48E3CFCE2C211F0000A31BE2 /* Views */,
@@ -207,6 +210,14 @@
 				48E3CFE62C221D1600A31BE2 /* TipPercentageButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		48E3CFE82C2226F700A31BE2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48E3CFE92C22270300A31BE2 /* Tip.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +379,7 @@
 				48E3CFDD2C21253600A31BE2 /* ThemeFont.swift in Sources */,
 				48E3CF8F2C2117A400A31BE2 /* SceneDelegate.swift in Sources */,
 				48E3CFE42C22128D00A31BE2 /* SplittedLabelView.swift in Sources */,
+				48E3CFEA2C22270300A31BE2 /* Tip.swift in Sources */,
 				48E3CFD82C211F5300A31BE2 /* SplitInputView.swift in Sources */,
 				48E3CFD62C211F4A00A31BE2 /* TipInputView.swift in Sources */,
 			);
