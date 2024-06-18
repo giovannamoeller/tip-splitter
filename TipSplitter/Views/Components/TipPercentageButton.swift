@@ -12,7 +12,7 @@ enum Tip {
     case tenPercent
     case fifteenPercent
     case twentyPercent
-    case custom(value: Int)
+    case custom
     
     var stringValue: String {
         switch self {
@@ -24,8 +24,8 @@ enum Tip {
             return "15%"
         case .twentyPercent:
             return "20%"
-        case .custom(let value):
-            return String(value)
+        case .custom:
+            return "Custom tip"
         }
     }
 }
@@ -38,6 +38,8 @@ class TipPercentageButton: UIButton {
         self.tip = tip
         super.init(frame: .zero)
         setupLayout()
+        setupTitle()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -47,15 +49,30 @@ class TipPercentageButton: UIButton {
     private func setupLayout() {
         backgroundColor = ThemeColor.primaryColor
         tintColor = .white
+        titleLabel?.textColor = .white
         layer.cornerRadius = 8.0
-        let text = NSMutableAttributedString(string: tip.stringValue,
-                                             attributes: [
-                                                .font: ThemeFont.titleBold
-                                             ])
-        text.addAttributes([
-            .font: ThemeFont.bodyBold
-        ], range: NSMakeRange(2, 1))
-        setAttributedTitle(text, for: .normal)
+    }
+    
+    private func setupTitle() {
+        if tip == .custom {
+            setTitle(tip.stringValue, for: .normal)
+            titleLabel?.font = ThemeFont.bodyBold
+        } else {
+            let text = NSMutableAttributedString(string: tip.stringValue,
+                                                 attributes: [
+                                                    .font: ThemeFont.titleBold
+                                                 ])
+            text.addAttributes([
+                .font: ThemeFont.bodyBold
+            ], range: NSMakeRange(2, 1))
+            setAttributedTitle(text, for: .normal)
+        }
+    }
+    
+    private func setupConstraints() {
+        self.snp.makeConstraints { constraintMaker in
+            constraintMaker.height.equalTo(56.0)
+        }
     }
 
 }
