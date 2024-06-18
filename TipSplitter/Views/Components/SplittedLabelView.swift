@@ -49,7 +49,8 @@ class SplittedLabelView: UIView {
     
     private func setupConstraints() {
         primaryTextLabel.snp.makeConstraints { constraintMaker in
-            constraintMaker.leading.top.equalToSuperview()
+            constraintMaker.leading.equalToSuperview()
+            constraintMaker.centerY.equalToSuperview().offset(-12.0)
         }
         
         secondaryTextLabel.snp.makeConstraints { constraintMaker in

@@ -9,7 +9,21 @@ import UIKit
 
 class BillInputView: UIView {
     
-    private var label = SplittedLabelView(primaryText: "Enter", secondaryText: "your bill")
+    private var headerLabel = SplittedLabelView(primaryText: "Enter", secondaryText: "your bill")
+    
+    private lazy var textFieldContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        return view
+    }()
+    
+    private lazy var horizontalStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [headerLabel, textFieldContainerView])
+        stackView.axis = .horizontal
+        stackView.spacing = 8.0
+        stackView.distribution = .fillProportionally
+        return stackView
+    }()
 
     init() {
         super.init(frame: .zero)
@@ -22,12 +36,11 @@ class BillInputView: UIView {
     }
     
     private func addSubviews() {
-        backgroundColor = .green
-        addSubview(label)
+        addSubview(horizontalStackView)
     }
     
     private func setupConstraints() {
-        label.snp.makeConstraints { constraintMaker in
+        horizontalStackView.snp.makeConstraints { constraintMaker in
             constraintMaker.edges.equalToSuperview()
         }
     }
