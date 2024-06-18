@@ -21,6 +21,11 @@
 		48E3CFC62C21183800A31BE2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 48E3CFC52C21183800A31BE2 /* SnapKit */; };
 		48E3CFCB2C21187E00A31BE2 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 48E3CFCA2C21187E00A31BE2 /* SnapshotTesting */; };
 		48E3CFCD2C21188300A31BE2 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 48E3CFCC2C21188300A31BE2 /* SnapshotTesting */; };
+		48E3CFD02C211F2000A31BE2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFCF2C211F2000A31BE2 /* LogoView.swift */; };
+		48E3CFD22C211F3200A31BE2 /* TipResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFD12C211F3200A31BE2 /* TipResultView.swift */; };
+		48E3CFD42C211F3E00A31BE2 /* BillInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFD32C211F3E00A31BE2 /* BillInputView.swift */; };
+		48E3CFD62C211F4A00A31BE2 /* TipInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFD52C211F4A00A31BE2 /* TipInputView.swift */; };
+		48E3CFD82C211F5300A31BE2 /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFD72C211F5300A31BE2 /* SplitInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		48E3CFA92C2117A400A31BE2 /* TipSplitterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipSplitterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E3CFAD2C2117A400A31BE2 /* TipSplitterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSplitterUITests.swift; sourceTree = "<group>"; };
 		48E3CFAF2C2117A400A31BE2 /* TipSplitterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSplitterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48E3CFCF2C211F2000A31BE2 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		48E3CFD12C211F3200A31BE2 /* TipResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipResultView.swift; sourceTree = "<group>"; };
+		48E3CFD32C211F3E00A31BE2 /* BillInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInputView.swift; sourceTree = "<group>"; };
+		48E3CFD52C211F4A00A31BE2 /* TipInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInputView.swift; sourceTree = "<group>"; };
+		48E3CFD72C211F5300A31BE2 /* SplitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +120,7 @@
 		48E3CF8B2C2117A400A31BE2 /* TipSplitter */ = {
 			isa = PBXGroup;
 			children = (
+				48E3CFCE2C211F0000A31BE2 /* Views */,
 				48E3CF8C2C2117A400A31BE2 /* AppDelegate.swift */,
 				48E3CF8E2C2117A400A31BE2 /* SceneDelegate.swift */,
 				48E3CF902C2117A400A31BE2 /* TipCalculatorViewController.swift */,
@@ -142,6 +153,18 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48E3CFCE2C211F0000A31BE2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48E3CFCF2C211F2000A31BE2 /* LogoView.swift */,
+				48E3CFD12C211F3200A31BE2 /* TipResultView.swift */,
+				48E3CFD32C211F3E00A31BE2 /* BillInputView.swift */,
+				48E3CFD52C211F4A00A31BE2 /* TipInputView.swift */,
+				48E3CFD72C211F5300A31BE2 /* SplitInputView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +314,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E3CFD22C211F3200A31BE2 /* TipResultView.swift in Sources */,
 				48E3CF912C2117A400A31BE2 /* TipCalculatorViewController.swift in Sources */,
+				48E3CFD42C211F3E00A31BE2 /* BillInputView.swift in Sources */,
+				48E3CFD02C211F2000A31BE2 /* LogoView.swift in Sources */,
 				48E3CF8D2C2117A400A31BE2 /* AppDelegate.swift in Sources */,
 				48E3CF8F2C2117A400A31BE2 /* SceneDelegate.swift in Sources */,
+				48E3CFD82C211F5300A31BE2 /* SplitInputView.swift in Sources */,
+				48E3CFD62C211F4A00A31BE2 /* TipInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
