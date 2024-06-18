@@ -9,7 +9,7 @@ import UIKit
 
 class BillInputView: UIView {
     
-    private var headerLabel = SplittedLabelView(topText: "Enter", bottomText: "your bill")
+    private var headerLabelView = SplittedLabelView(topText: "Enter", bottomText: "your bill")
     
     private lazy var textFieldContainerView: UIView = {
         let view = UIView()
@@ -64,13 +64,13 @@ class BillInputView: UIView {
     }
     
     private func addSubviews() {
-        [headerLabel, textFieldContainerView].forEach(addSubview(_:))
+        [headerLabelView, textFieldContainerView].forEach(addSubview(_:))
         textFieldContainerView.addSubview(currencyLabel)
         textFieldContainerView.addSubview(textField)
     }
     
     private func setupConstraints() {
-        headerLabel.snp.makeConstraints { constraintMaker in
+        headerLabelView.snp.makeConstraints { constraintMaker in
             constraintMaker.leading.equalToSuperview()
             constraintMaker.centerY.equalTo(textFieldContainerView.snp.centerY)
             constraintMaker.trailing.equalTo(textFieldContainerView.snp.leading).offset(-16.0)

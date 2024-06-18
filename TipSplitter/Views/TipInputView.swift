@@ -9,7 +9,7 @@ import UIKit
 
 class TipInputView: UIView {
     
-    private var headerLabel = SplittedLabelView(topText: "Choose", bottomText: "your tip")
+    private var headerLabelView = SplittedLabelView(topText: "Choose", bottomText: "your tip")
 
     init() {
         super.init(frame: .zero)
