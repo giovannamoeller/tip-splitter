@@ -26,7 +26,7 @@ class TipCalculatorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "LightBeige")
+        view.backgroundColor = ThemeColor.secondaryLighterColor
         addSubviews()
         setupConstraints()
     }
