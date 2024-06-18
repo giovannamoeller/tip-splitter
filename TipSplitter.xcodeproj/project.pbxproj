@@ -31,6 +31,7 @@
 		48E3CFDF2C21B66F00A31BE2 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */; };
 		48E3CFE22C21B9FF00A31BE2 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE12C21B9FF00A31BE2 /* UIView+.swift */; };
 		48E3CFE42C22128D00A31BE2 /* SplittedLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE32C22128D00A31BE2 /* SplittedLabelView.swift */; };
+		48E3CFE72C221D1600A31BE2 /* TipPercentageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE62C221D1600A31BE2 /* TipPercentageButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 		48E3CFE12C21B9FF00A31BE2 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		48E3CFE32C22128D00A31BE2 /* SplittedLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplittedLabelView.swift; sourceTree = "<group>"; };
+		48E3CFE62C221D1600A31BE2 /* TipPercentageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPercentageButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			children = (
 				48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */,
 				48E3CFE32C22128D00A31BE2 /* SplittedLabelView.swift */,
+				48E3CFE62C221D1600A31BE2 /* TipPercentageButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				48E3CFDB2C21252F00A31BE2 /* ThemeColor.swift in Sources */,
 				48E3CFD42C211F3E00A31BE2 /* BillInputView.swift in Sources */,
 				48E3CFD02C211F2000A31BE2 /* LogoView.swift in Sources */,
+				48E3CFE72C221D1600A31BE2 /* TipPercentageButton.swift in Sources */,
 				48E3CFDF2C21B66F00A31BE2 /* AmountView.swift in Sources */,
 				48E3CF8D2C2117A400A31BE2 /* AppDelegate.swift in Sources */,
 				48E3CFDD2C21253600A31BE2 /* ThemeFont.swift in Sources */,
