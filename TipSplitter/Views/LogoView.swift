@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class LogoView: UIView {
     
@@ -25,8 +26,13 @@ class LogoView: UIView {
     }
     
     private func setupLayout() {
-        backgroundColor = .red
         addSubview(logoImageView)
+        
+        logoImageView.snp.makeConstraints { constraintMaker in
+            constraintMaker.centerX.equalTo(snp.centerX)
+            constraintMaker.centerY.equalTo(snp.centerY)
+            constraintMaker.height.equalTo(snp.height)
+        }
     }
     
 }
