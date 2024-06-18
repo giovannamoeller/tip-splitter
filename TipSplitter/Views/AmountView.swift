@@ -64,7 +64,7 @@ class AmountView: UIView {
     
     private func setupConstraints() {
         verticalStackView.snp.makeConstraints { constraintMaker in
-            constraintMaker.top.bottom.leading.trailing.equalToSuperview()
+            constraintMaker.edges.equalToSuperview()
         }
     }
     
