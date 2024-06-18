@@ -30,6 +30,7 @@
 		48E3CFDD2C21253600A31BE2 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFDC2C21253600A31BE2 /* ThemeFont.swift */; };
 		48E3CFDF2C21B66F00A31BE2 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */; };
 		48E3CFE22C21B9FF00A31BE2 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE12C21B9FF00A31BE2 /* UIView+.swift */; };
+		48E3CFE42C22128D00A31BE2 /* SplittedLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE32C22128D00A31BE2 /* SplittedLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		48E3CFDC2C21253600A31BE2 /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
 		48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 		48E3CFE12C21B9FF00A31BE2 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		48E3CFE32C22128D00A31BE2 /* SplittedLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplittedLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,12 +170,12 @@
 		48E3CFCE2C211F0000A31BE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48E3CFE52C22143E00A31BE2 /* Components */,
 				48E3CFCF2C211F2000A31BE2 /* LogoView.swift */,
 				48E3CFD12C211F3200A31BE2 /* TipResultView.swift */,
 				48E3CFD32C211F3E00A31BE2 /* BillInputView.swift */,
 				48E3CFD52C211F4A00A31BE2 /* TipInputView.swift */,
 				48E3CFD72C211F5300A31BE2 /* SplitInputView.swift */,
-				48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +195,15 @@
 				48E3CFE12C21B9FF00A31BE2 /* UIView+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		48E3CFE52C22143E00A31BE2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				48E3CFDE2C21B66F00A31BE2 /* AmountView.swift */,
+				48E3CFE32C22128D00A31BE2 /* SplittedLabelView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +363,7 @@
 				48E3CF8D2C2117A400A31BE2 /* AppDelegate.swift in Sources */,
 				48E3CFDD2C21253600A31BE2 /* ThemeFont.swift in Sources */,
 				48E3CF8F2C2117A400A31BE2 /* SceneDelegate.swift in Sources */,
+				48E3CFE42C22128D00A31BE2 /* SplittedLabelView.swift in Sources */,
 				48E3CFD82C211F5300A31BE2 /* SplitInputView.swift in Sources */,
 				48E3CFD62C211F4A00A31BE2 /* TipInputView.swift in Sources */,
 			);
