@@ -46,10 +46,6 @@ class TipPercentageButton: UIButton {
         }
     }
     
-    private func setupConstraints() {
-        self.snp.makeConstraints { constraintMaker in
-            constraintMaker.height.equalTo(56.0)
-        }
-    }
+    private func setupConstraints() {}
 
 }
