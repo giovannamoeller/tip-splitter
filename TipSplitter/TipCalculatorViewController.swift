@@ -47,10 +47,6 @@ class TipCalculatorViewController: UIViewController {
             constraintMaker.height.equalTo(72)
         }
         
-        billInputView.snp.makeConstraints { constraintMaker in
-            constraintMaker.height.equalTo(84)
-        }
-        
         tipInputView.snp.makeConstraints { constraintMaker in
             constraintMaker.height.equalTo(84)
         }
