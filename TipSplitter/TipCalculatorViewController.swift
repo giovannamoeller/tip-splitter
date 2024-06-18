@@ -32,6 +32,7 @@ class TipCalculatorViewController: UIViewController {
     }
     
     private func addSubviews() {
+        stackView.backgroundColor = .red
         view.addSubview(stackView)
     }
     
@@ -39,16 +40,12 @@ class TipCalculatorViewController: UIViewController {
         stackView.snp.makeConstraints { constraintMaker in
             constraintMaker.leading.equalTo(view.snp.leadingMargin).offset(16)
             constraintMaker.trailing.equalTo(view.snp.trailingMargin).offset(-16)
-            constraintMaker.bottom.equalTo(view.snp.bottomMargin).offset(-8)
-            constraintMaker.top.equalTo(view.snp.topMargin).offset(8)
+            constraintMaker.bottom.equalTo(view.snp.bottomMargin)
+            constraintMaker.top.equalTo(view.snp.topMargin).offset(-16.0)
         }
         
         logoView.snp.makeConstraints { constraintMaker in
-            constraintMaker.height.equalTo(48)
-        }
-        
-        splitInputView.snp.makeConstraints { constraintMaker in
-            constraintMaker.height.equalTo(84)
+            constraintMaker.height.equalTo(52.0)
         }
     }
 }

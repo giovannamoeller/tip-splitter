@@ -15,4 +15,9 @@ extension UIView {
         layer.shadowOpacity = opacity
         layer.shadowColor = color.cgColor
     }
+    
+    func addRoundedCorners(corners: CACornerMask, radius: CGFloat) {
+        layer.cornerRadius = radius
+        layer.maskedCorners = [corners]
+    }
 }
