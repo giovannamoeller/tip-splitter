@@ -11,7 +11,6 @@ class LogoView: UIView {
     
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "logo-transparent"))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

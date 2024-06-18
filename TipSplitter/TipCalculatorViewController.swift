@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class TipCalculatorViewController: UIViewController {
     
@@ -20,7 +21,6 @@ class TipCalculatorViewController: UIViewController {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 36
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.backgroundColor = .systemPink
         return stackView
     }()
@@ -37,12 +37,12 @@ class TipCalculatorViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-        ])
+        stackView.snp.makeConstraints { constraintMaker in
+            constraintMaker.leading.equalTo(view.snp.leadingMargin).offset(16)
+            constraintMaker.trailing.equalTo(view.snp.trailingMargin).offset(-16)
+            constraintMaker.bottom.equalTo(view.snp.bottomMargin).offset(-16)
+            constraintMaker.top.equalTo(view.snp.topMargin).offset(16)
+        }
     }
 }
 
