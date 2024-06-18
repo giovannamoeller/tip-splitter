@@ -32,7 +32,7 @@ class BillInputView: UIView {
         let textField = UITextField()
         textField.borderStyle = .none
         textField.backgroundColor = .clear
-        textField.font = ThemeFont.bodyRegular
+        textField.font = ThemeFont.bodyBold
         textField.keyboardType = .decimalPad
         textField.setContentHuggingPriority(.defaultLow, for: .horizontal)
         textField.tintColor = ThemeColor.textColor
@@ -95,7 +95,7 @@ class BillInputView: UIView {
     }
     
     @objc private func didTapDoneButton() {
-        
+        textField.endEditing(true)
     }
     
 }
