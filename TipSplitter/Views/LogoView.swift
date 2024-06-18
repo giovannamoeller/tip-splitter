@@ -34,16 +34,19 @@ class LogoView: UIView {
 
     init() {
         super.init(frame: .zero)
-        setupLayout()
+        addSubviews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupLayout() {
+    private func addSubviews() {
         addSubview(horizontalStackView)
-        
+    }
+    
+    private func setupConstraints() {
         horizontalStackView.snp.makeConstraints { constraintMaker in
             constraintMaker.top.bottom.equalToSuperview()
             constraintMaker.centerX.equalToSuperview()
