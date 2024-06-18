@@ -9,8 +9,8 @@ import UIKit
 
 class TipResultView: UIView {
     
-    private var totalBillView = AmountView()
-    private var totalTipView = AmountView()
+    private var totalBillView = AmountView(labelText: "Total bill", amountValueText: "$000")
+    private var totalTipView = AmountView(labelText: "Total tip", amountValueText: "$000", alignment: .trailing)
     
     private lazy var totalPerPersonLabel: UILabel = {
         let label = UILabel()
@@ -85,14 +85,6 @@ class TipResultView: UIView {
         verticalStackView.snp.makeConstraints { constraintMaker in
             constraintMaker.top.leading.equalToSuperview().offset(16)
             constraintMaker.bottom.trailing.equalToSuperview().offset(-16)
-        }
-        
-        totalBillView.snp.makeConstraints { constraintMaker in
-            constraintMaker.height.equalTo(32)
-        }
-        
-        totalTipView.snp.makeConstraints { constraintMaker in
-            constraintMaker.height.equalTo(32)
         }
         
         horizontalLineView.snp.makeConstraints { constraintMaker in
