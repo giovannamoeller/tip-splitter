@@ -6,17 +6,49 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class TipInputView: UIView {
     
     private var headerLabelView = SplittedLabelView(topText: "Choose", bottomText: "your tip")
-    private var tenPercentTipButton = TipPercentageButton(tip: .tenPercent)
-    private var fifteenPercentTipButton = TipPercentageButton(tip: .fifteenPercent)
-    private var twentyPercentTipButton = TipPercentageButton(tip: .twentyPercent)
-    private var customTipButton = TipPercentageButton(tip: .custom)
+    private lazy var tenPercentTipButton: TipPercentageButton = {
+        let button = TipPercentageButton(tip: .tenPercent)
+        button.tapPublisher.flatMap ({Just(Tip.tenPercent)})
+            .assign(to: \.value, on: tipSubject)
+            .store(in: &cancellables)
+        return button
+    }()
+    private lazy var fifteenPercentTipButton: TipPercentageButton = {
+        let button = TipPercentageButton(tip: .fifteenPercent)
+        button.tapPublisher.flatMap ({Just(Tip.fifteenPercent)})
+            .assign(to: \.value, on: tipSubject)
+            .store(in: &cancellables)
+        return button
+    }()
+    private lazy var twentyPercentTipButton: TipPercentageButton = {
+        let button = TipPercentageButton(tip: .twentyPercent)
+        button.tapPublisher.flatMap ({Just(Tip.twentyPercent)})
+            .assign(to: \.value, on: tipSubject)
+            .store(in: &cancellables)
+        return button
+    }()
+    private lazy var customPercentTipButton: TipPercentageButton = {
+        let button = TipPercentageButton(tip: .custom)
+        button.tapPublisher.flatMap ({Just(Tip.custom)})
+            .assign(to: \.value, on: tipSubject)
+            .store(in: &cancellables)
+        return button
+    }()
+    
+    private var tipSubject = CurrentValueSubject<Tip, Never>(.none)
+    var valuePublisher: AnyPublisher<Tip, Never> {
+        return tipSubject.eraseToAnyPublisher()
+    }
+    private var cancellables = Set<AnyCancellable>()
     
     private lazy var verticalStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [horizontalStackView, customTipButton])
+        let stackView = UIStackView(arrangedSubviews: [horizontalStackView, customPercentTipButton])
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = 16.0
