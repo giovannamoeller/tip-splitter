@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class TipCalculatorViewController: UIViewController {
     
@@ -15,6 +16,9 @@ class TipCalculatorViewController: UIViewController {
     private var billInputView = BillInputView()
     private var tipInputView = TipInputView()
     private var splitInputView = SplitInputView()
+    
+    private var viewModel = TipCalculatorViewModel()
+    private var cancellables = Set<AnyCancellable>()
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [logoView, tipResultView, billInputView, tipInputView, splitInputView])
@@ -28,9 +32,24 @@ class TipCalculatorViewController: UIViewController {
         view.backgroundColor = ThemeColor.secondaryLighterColor
         addSubviews()
         setupConstraints()
+        bind()
     }
     
-    private func addSubviews() {
+    private func bind() {
+        
+        let input = TipCalculatorViewModel.Input(
+            billPublisher: billInputView.valuePublisher,
+            tipPublisher: Just(.tenPercent).eraseToAnyPublisher(),
+            splitPublisher: Just(5).eraseToAnyPublisher())
+        
+        let output = viewModel.transform(input: input)
+        
+        output.updateViewPublisher.sink { result in
+            print(result)
+        }.store(in: &cancellables)
+    }
+    
+    private func addSubviews() {    
         view.addSubview(stackView)
     }
     

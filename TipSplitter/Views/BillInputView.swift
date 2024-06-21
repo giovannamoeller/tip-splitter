@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class BillInputView: UIView {
     
     private var headerLabelView = SplittedLabelView(topText: "Enter", bottomText: "your bill")
+    
+    private var cancellables = Set<AnyCancellable>()
+    private var billSubject: PassthroughSubject<Double, Never> = .init()
+    var valuePublisher: AnyPublisher<Double, Never> {
+        return billSubject.eraseToAnyPublisher()
+    }
     
     private lazy var textFieldContainerView: UIView = {
         let view = UIView()
@@ -57,10 +65,18 @@ class BillInputView: UIView {
         super.init(frame: .zero)
         addSubviews()
         setupConstraints()
+        observe()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func observe() {
+        textField.textPublisher.sink { [weak self] text in
+            let billValue: Double? = Double(text ?? "")
+            self?.billSubject.send(billValue ?? 0)
+        }.store(in: &cancellables)
     }
     
     private func addSubviews() {
