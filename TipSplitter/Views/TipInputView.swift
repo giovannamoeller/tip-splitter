@@ -72,6 +72,7 @@ class TipInputView: UIView {
         super.init(frame: .zero)
         addSubviews()
         setupConstraints()
+        observe()
     }
     
     required init?(coder: NSCoder) {
@@ -111,6 +112,43 @@ class TipInputView: UIView {
         }
         [okAction, cancelAction].forEach(alertController.addAction(_:))
         parentViewController?.present(alertController, animated: true)
+    }
+    
+    private func resetView() {
+        [tenPercentTipButton, fifteenPercentTipButton, twentyPercentTipButton, customPercentTipButton].forEach { button in
+            button.backgroundColor = ThemeColor.primaryColor
+        }
+        let text = NSMutableAttributedString(string: "Custom tip",
+                                             attributes: [
+                                                .font: ThemeFont.titleBold
+                                             ])
+        customPercentTipButton.setAttributedTitle(text, for: .normal)
+    }
+    
+    private func observe() {
+        tipSubject.sink { [weak self] tip in
+            self?.resetView()
+            switch tip {
+            case .none: break
+            case .tenPercent:
+                self?.tenPercentTipButton.backgroundColor = ThemeColor.textColor
+            case .fifteenPercent:
+                self?.fifteenPercentTipButton.backgroundColor = ThemeColor.textColor
+            case .twentyPercent:
+                self?.twentyPercentTipButton.backgroundColor = ThemeColor.textColor
+            case .custom(let value):
+                self?.customPercentTipButton.backgroundColor = ThemeColor.textColor
+                let string = value > 9 ? "\(value)%" : "0\(value)%"
+                let text = NSMutableAttributedString(string: string,
+                                                     attributes: [
+                                                        .font: ThemeFont.titleBold
+                                                     ])
+                text.addAttributes([
+                    .font: ThemeFont.bodyBold
+                ], range: NSMakeRange(2, 1))
+                self?.customPercentTipButton.setAttributedTitle(text, for: .normal)
+            }
+        }.store(in: &cancellables)
     }
     
 }
