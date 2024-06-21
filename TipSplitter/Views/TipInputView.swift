@@ -11,7 +11,15 @@ import CombineCocoa
 
 class TipInputView: UIView {
     
+    private var tipSubject = CurrentValueSubject<Tip, Never>(.none)
+    private var cancellables = Set<AnyCancellable>()
+    
+    var valuePublisher: AnyPublisher<Tip, Never> {
+        return tipSubject.eraseToAnyPublisher()
+    }
+    
     private var headerLabelView = SplittedLabelView(topText: "Choose", bottomText: "your tip")
+    
     private lazy var tenPercentTipButton: TipPercentageButton = {
         let button = TipPercentageButton(tip: .tenPercent)
         button.tapPublisher.flatMap ({Just(Tip.tenPercent)})
@@ -19,6 +27,7 @@ class TipInputView: UIView {
             .store(in: &cancellables)
         return button
     }()
+    
     private lazy var fifteenPercentTipButton: TipPercentageButton = {
         let button = TipPercentageButton(tip: .fifteenPercent)
         button.tapPublisher.flatMap ({Just(Tip.fifteenPercent)})
@@ -26,6 +35,7 @@ class TipInputView: UIView {
             .store(in: &cancellables)
         return button
     }()
+    
     private lazy var twentyPercentTipButton: TipPercentageButton = {
         let button = TipPercentageButton(tip: .twentyPercent)
         button.tapPublisher.flatMap ({Just(Tip.twentyPercent)})
@@ -33,6 +43,7 @@ class TipInputView: UIView {
             .store(in: &cancellables)
         return button
     }()
+    
     private lazy var customPercentTipButton: TipPercentageButton = {
         let button = TipPercentageButton(tip: .custom)
         button.tapPublisher.flatMap ({Just(Tip.custom)})
@@ -40,12 +51,6 @@ class TipInputView: UIView {
             .store(in: &cancellables)
         return button
     }()
-    
-    private var tipSubject = CurrentValueSubject<Tip, Never>(.none)
-    var valuePublisher: AnyPublisher<Tip, Never> {
-        return tipSubject.eraseToAnyPublisher()
-    }
-    private var cancellables = Set<AnyCancellable>()
     
     private lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [horizontalStackView, customPercentTipButton])
