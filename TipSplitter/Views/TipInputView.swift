@@ -45,10 +45,10 @@ class TipInputView: UIView {
     }()
     
     private lazy var customPercentTipButton: TipPercentageButton = {
-        let button = TipPercentageButton(tip: .custom)
-        button.tapPublisher.flatMap ({Just(Tip.custom)})
-            .assign(to: \.value, on: tipSubject)
-            .store(in: &cancellables)
+        let button = TipPercentageButton(tip: .custom(value: 0))
+        button.tapPublisher.sink { [weak self] _ in
+            self?.handleCustomTipButtonTap()
+        }.store(in: &cancellables)
         return button
     }()
     
@@ -94,6 +94,23 @@ class TipInputView: UIView {
         verticalStackView.snp.makeConstraints { constraintMaker in
             constraintMaker.top.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    private func handleCustomTipButtonTap() {
+        let alertController = UIAlertController(title: "Enter custom tip", message: nil, preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.placeholder = "Make it generous!"
+            textField.keyboardType = .numberPad
+            textField.autocorrectionType = .no
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+            guard let text = alertController.textFields?.first?.text,
+                  let value = Int(text) else { return }
+            self?.tipSubject.send(.custom(value: value))
+        }
+        [okAction, cancelAction].forEach(alertController.addAction(_:))
+        parentViewController?.present(alertController, animated: true)
     }
     
 }

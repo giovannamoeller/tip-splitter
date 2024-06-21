@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum Tip {
+enum Tip: Equatable {
     case none
     case tenPercent
     case fifteenPercent
     case twentyPercent
-    case custom
+    case custom(value: Int)
     
     var stringValue: String {
         switch self {
@@ -24,7 +24,7 @@ enum Tip {
             return "15%"
         case .twentyPercent:
             return "20%"
-        case .custom:
+        case .custom(_):
             return "Custom tip"
         }
     }

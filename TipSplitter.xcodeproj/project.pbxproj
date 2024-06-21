@@ -35,6 +35,7 @@
 		48E3CFEA2C22270300A31BE2 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFE92C22270300A31BE2 /* Tip.swift */; };
 		48E3CFED2C2242CF00A31BE2 /* TipCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFEC2C2242CF00A31BE2 /* TipCalculatorViewModel.swift */; };
 		48E3CFEF2C22439500A31BE2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFEE2C22439500A31BE2 /* Result.swift */; };
+		48E3CFF12C25E5FD00A31BE2 /* UIResponder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFF02C25E5FD00A31BE2 /* UIResponder+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		48E3CFE92C22270300A31BE2 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		48E3CFEC2C2242CF00A31BE2 /* TipCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorViewModel.swift; sourceTree = "<group>"; };
 		48E3CFEE2C22439500A31BE2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		48E3CFF02C25E5FD00A31BE2 /* UIResponder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				48E3CFE12C21B9FF00A31BE2 /* UIView+.swift */,
+				48E3CFF02C25E5FD00A31BE2 /* UIResponder+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E3CFF12C25E5FD00A31BE2 /* UIResponder+.swift in Sources */,
 				48E3CFE22C21B9FF00A31BE2 /* UIView+.swift in Sources */,
 				48E3CFD22C211F3200A31BE2 /* TipResultView.swift in Sources */,
 				48E3CF912C2117A400A31BE2 /* TipCalculatorViewController.swift in Sources */,

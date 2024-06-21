@@ -31,7 +31,7 @@ class TipPercentageButton: UIButton {
     }
     
     private func setupTitle() {
-        if tip == .custom {
+        if tip == .custom(value: 0) {
             setTitle(tip.stringValue, for: .normal)
             titleLabel?.font = ThemeFont.bodyBold
         } else {
