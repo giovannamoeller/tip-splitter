@@ -39,8 +39,8 @@ class TipCalculatorViewController: UIViewController {
         
         let input = TipCalculatorViewModel.Input(
             billPublisher: billInputView.valuePublisher,
-            tipPublisher: tipInputView.valuePublisher.eraseToAnyPublisher(),
-            splitPublisher: Just(5).eraseToAnyPublisher())
+            tipPublisher: tipInputView.valuePublisher,
+            splitPublisher: splitInputView.valuePublisher)
         
         let output = viewModel.transform(input: input)
         

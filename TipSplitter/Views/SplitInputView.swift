@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class SplitInputView: UIView {
     
     private var headerLabelView = SplittedLabelView(topText: "Split", bottomText: "the total")
-    private var splitQuantity: Int = 1 {
-        didSet {
-            quantityLabel.text = "\(splitQuantity)"
-        }
+    
+    private let splitSubject: CurrentValueSubject<Int, Never> = .init(1)
+    var valuePublisher: AnyPublisher<Int, Never> {
+        return splitSubject.removeDuplicates().eraseToAnyPublisher()
     }
+    private var cancellables = Set<AnyCancellable>()
     
     private lazy var decrementButton: UIButton = {
         let button = UIButton()
@@ -22,7 +25,11 @@ class SplitInputView: UIView {
         button.setTitle("-", for: .normal)
         button.titleLabel?.font = ThemeFont.titleBold
         button.addRoundedCorners(corners: [.layerMinXMaxYCorner, .layerMinXMinYCorner], radius: 8.0)
-        button.addTarget(self, action: #selector(didTapDecrementButton), for: .touchUpInside)
+        button.tapPublisher.flatMap { [unowned self] _ in
+            Just(self.splitSubject.value == 1 ? 1 : splitSubject.value - 1)
+        }
+        .assign(to: \.value, on: splitSubject)
+        .store(in: &cancellables)
         return button
     }()
     
@@ -32,13 +39,16 @@ class SplitInputView: UIView {
         button.setTitle("+", for: .normal)
         button.titleLabel?.font = ThemeFont.titleBold
         button.addRoundedCorners(corners: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner], radius: 8.0)
-        button.addTarget(self, action: #selector(didTapIncrementButton), for: .touchUpInside)
+        button.tapPublisher.flatMap { [unowned self] _ in
+            Just(self.splitSubject.value + 1)
+        }
+        .assign(to: \.value, on: splitSubject)
+        .store(in: &cancellables)
         return button
     }()
     
     private lazy var quantityLabel: UILabel = {
         let label = UILabel()
-        label.text = "\(splitQuantity)"
         label.font = ThemeFont.titleBold
         label.textAlignment = .center
         label.backgroundColor = .white
@@ -56,6 +66,13 @@ class SplitInputView: UIView {
         super.init(frame: .zero)
         addSubviews()
         setupConstraints()
+        observe()
+    }
+    
+    private func observe() {
+        splitSubject.sink { [weak self] quantity in
+            self?.quantityLabel.text = "\(quantity)"
+        }.store(in: &cancellables)
     }
     
     required init?(coder: NSCoder) {
@@ -79,16 +96,5 @@ class SplitInputView: UIView {
             constraintMaker.height.equalTo(52.0)
         }
     }
-    
-    @objc private func didTapIncrementButton() {
-        splitQuantity += 1
-    }
-    
-    @objc private func didTapDecrementButton() {
-        if splitQuantity > 1 {
-            splitQuantity -= 1
-        }
-    }
-    
 }
 
