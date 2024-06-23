@@ -45,7 +45,7 @@ class TipCalculatorViewController: UIViewController {
         let output = viewModel.transform(input: input)
         
         output.updateViewPublisher.sink { result in
-            print(result)
+            self.tipResultView.updateView(amountPerPerson: result.amountPerPerson, totalBill: result.totalBill, totalTip: result.totalTip)
         }.store(in: &cancellables)
     }
     

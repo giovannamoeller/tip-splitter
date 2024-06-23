@@ -90,4 +90,10 @@ class TipResultView: UIView {
             constraintMaker.height.equalTo(1)
         }
     }
+    
+    func updateView(amountPerPerson: Double, totalBill: Double, totalTip: Double) {
+        amountPerPersonLabel.text = "$\(amountPerPerson)"
+        totalBillView.amountPerPersonLabel.text = "$\(totalBill)"
+        totalTipView.amountPerPersonLabel.text = "$\(totalTip)"
+    }
 }

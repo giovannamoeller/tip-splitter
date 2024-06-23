@@ -21,7 +21,7 @@ class AmountView: UIView {
         return label
     }()
     
-    private lazy var amountPerPersonLabel: UILabel = {
+    lazy var amountPerPersonLabel: UILabel = {
         let label = UILabel()
         let text = NSMutableAttributedString(
             string: amountValueText,
