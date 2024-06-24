@@ -36,6 +36,7 @@
 		48E3CFED2C2242CF00A31BE2 /* TipCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFEC2C2242CF00A31BE2 /* TipCalculatorViewModel.swift */; };
 		48E3CFEF2C22439500A31BE2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFEE2C22439500A31BE2 /* Result.swift */; };
 		48E3CFF12C25E5FD00A31BE2 /* UIResponder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFF02C25E5FD00A31BE2 /* UIResponder+.swift */; };
+		48E3CFF32C29B21D00A31BE2 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CFF22C29B21D00A31BE2 /* Double+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		48E3CFEC2C2242CF00A31BE2 /* TipCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorViewModel.swift; sourceTree = "<group>"; };
 		48E3CFEE2C22439500A31BE2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		48E3CFF02C25E5FD00A31BE2 /* UIResponder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+.swift"; sourceTree = "<group>"; };
+		48E3CFF22C29B21D00A31BE2 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			children = (
 				48E3CFE12C21B9FF00A31BE2 /* UIView+.swift */,
 				48E3CFF02C25E5FD00A31BE2 /* UIResponder+.swift */,
+				48E3CFF22C29B21D00A31BE2 /* Double+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				48E3CF8F2C2117A400A31BE2 /* SceneDelegate.swift in Sources */,
 				48E3CFE42C22128D00A31BE2 /* SplittedLabelView.swift in Sources */,
 				48E3CFEA2C22270300A31BE2 /* Tip.swift in Sources */,
+				48E3CFF32C29B21D00A31BE2 /* Double+.swift in Sources */,
 				48E3CFEF2C22439500A31BE2 /* Result.swift in Sources */,
 				48E3CFD82C211F5300A31BE2 /* SplitInputView.swift in Sources */,
 				48E3CFD62C211F4A00A31BE2 /* TipInputView.swift in Sources */,

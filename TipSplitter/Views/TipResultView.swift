@@ -9,8 +9,8 @@ import UIKit
 
 class TipResultView: UIView {
     
-    private var totalBillView = AmountView(labelText: "Total bill", amountValueText: "$000")
-    private var totalTipView = AmountView(labelText: "Total tip", amountValueText: "$000", alignment: .trailing)
+    private var totalBillView = AmountView(labelText: "Total bill", amountValueText: 0.0.currencyFormatted)
+    private var totalTipView = AmountView(labelText: "Total tip", amountValueText: 0.0.currencyFormatted, alignment: .trailing)
     
     private lazy var totalPerPersonLabel: UILabel = {
         let label = UILabel()
@@ -24,13 +24,13 @@ class TipResultView: UIView {
     private lazy var amountPerPersonLabel: UILabel = {
         let label = UILabel()
         let text = NSMutableAttributedString(
-            string: "$000",
+            string: 0.0.currencyFormatted,
             attributes: [
                 .font: ThemeFont.largeTitleBold
             ])
         text.addAttributes([
             .font: ThemeFont.titleBold
-        ], range: NSMakeRange(0, 1))
+        ], range: NSMakeRange(0, 2))
         label.attributedText = text
         label.textColor = ThemeColor.textColor
         label.textAlignment = .center
@@ -93,13 +93,13 @@ class TipResultView: UIView {
     
     func updateView(result: Result) {
         print(result)
-        let text = NSMutableAttributedString(string: "\(result.amountPerPerson)",
+        let text = NSMutableAttributedString(string: result.amountPerPerson.currencyFormatted,
                                              attributes: [.font: ThemeFont.largeTitleBold])
         text.addAttributes([
             .font: ThemeFont.titleBold
-        ], range: NSMakeRange(0, 1))
+        ], range: NSMakeRange(0, 2))
         amountPerPersonLabel.attributedText = text
-        totalBillView.updateView(text: "\(result.totalBill)")
-        totalTipView.updateView(text: "\(result.totalTip)")
+        totalBillView.updateView(amount: result.totalBill)
+        totalTipView.updateView(amount: result.totalTip)
     }
 }

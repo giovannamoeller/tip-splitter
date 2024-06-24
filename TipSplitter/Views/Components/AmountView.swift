@@ -30,7 +30,7 @@ class AmountView: UIView {
             ])
         text.addAttributes([
             .font: ThemeFont.bodyBold
-        ], range: NSMakeRange(0, 1))
+        ], range: NSMakeRange(0, 2))
         label.attributedText = text
         label.textColor = ThemeColor.primaryColor
         return label
@@ -68,15 +68,15 @@ class AmountView: UIView {
         }
     }
     
-    func updateView(text: String) {
+    func updateView(amount: Double) {
         let text = NSMutableAttributedString(
-            string: text,
+            string: amount.currencyFormatted,
             attributes: [
                 .font: ThemeFont.titleBold
             ])
         text.addAttributes([
             .font: ThemeFont.bodyBold
-        ], range: NSMakeRange(0, 1))
+        ], range: NSMakeRange(0, 2))
         amountPerPersonLabel.attributedText = text
     }
     

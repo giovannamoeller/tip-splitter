@@ -29,7 +29,7 @@ class BillInputView: UIView {
     
     private lazy var currencyLabel: UILabel = {
         let label = UILabel()
-        label.text = "$"
+        label.text = "R$"
         label.font = ThemeFont.titleBold
         label.textColor = ThemeColor.textColor
         label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
