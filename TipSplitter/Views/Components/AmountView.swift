@@ -68,4 +68,16 @@ class AmountView: UIView {
         }
     }
     
+    func updateView(text: String) {
+        let text = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                .font: ThemeFont.titleBold
+            ])
+        text.addAttributes([
+            .font: ThemeFont.bodyBold
+        ], range: NSMakeRange(0, 1))
+        amountPerPersonLabel.attributedText = text
+    }
+    
 }

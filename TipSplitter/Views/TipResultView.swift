@@ -91,9 +91,15 @@ class TipResultView: UIView {
         }
     }
     
-    func updateView(amountPerPerson: Double, totalBill: Double, totalTip: Double) {
-        amountPerPersonLabel.text = "$\(amountPerPerson)"
-        totalBillView.amountPerPersonLabel.text = "$\(totalBill)"
-        totalTipView.amountPerPersonLabel.text = "$\(totalTip)"
+    func updateView(result: Result) {
+        print(result)
+        let text = NSMutableAttributedString(string: "\(result.amountPerPerson)",
+                                             attributes: [.font: ThemeFont.largeTitleBold])
+        text.addAttributes([
+            .font: ThemeFont.titleBold
+        ], range: NSMakeRange(0, 1))
+        amountPerPersonLabel.attributedText = text
+        totalBillView.updateView(text: "\(result.totalBill)")
+        totalTipView.updateView(text: "\(result.totalTip)")
     }
 }
