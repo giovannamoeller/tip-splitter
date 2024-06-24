@@ -26,6 +26,23 @@ class TipCalculatorViewController: UIViewController {
         stackView.spacing = 36.0
         return stackView
     }()
+    
+    private lazy var viewTapPublisher: AnyPublisher<Void, Never> = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: nil)
+        view.addGestureRecognizer(tapGesture)
+        return tapGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
+    
+    private lazy var logoViewTapPublisher: AnyPublisher<Void, Never> = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: nil)
+        tapGesture.numberOfTapsRequired = 2
+        logoView.addGestureRecognizer(tapGesture)
+        return tapGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +50,7 @@ class TipCalculatorViewController: UIViewController {
         addSubviews()
         setupConstraints()
         bind()
+        observe()
     }
     
     private func bind() {
@@ -46,6 +64,16 @@ class TipCalculatorViewController: UIViewController {
         
         output.updateViewPublisher.sink { result in
             self.tipResultView.updateView(result: result)
+        }.store(in: &cancellables)
+    }
+    
+    func observe() {
+        viewTapPublisher.sink { _ in
+            self.view.endEditing(true)
+        }.store(in: &cancellables)
+        
+        logoViewTapPublisher.sink { _ in
+            print("logo view")
         }.store(in: &cancellables)
     }
     
