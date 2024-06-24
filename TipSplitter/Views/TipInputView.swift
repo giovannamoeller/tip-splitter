@@ -125,6 +125,10 @@ class TipInputView: UIView {
         customPercentTipButton.setAttributedTitle(text, for: .normal)
     }
     
+    func reset() {
+        tipSubject.send(.none)
+    }
+    
     private func observe() {
         tipSubject.sink { [weak self] tip in
             self?.resetView()

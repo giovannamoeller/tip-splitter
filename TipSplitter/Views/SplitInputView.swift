@@ -69,6 +69,10 @@ class SplitInputView: UIView {
         observe()
     }
     
+    func reset() {
+        splitSubject.send(1)
+    }
+    
     private func observe() {
         splitSubject.sink { [weak self] quantity in
             self?.quantityLabel.text = "\(quantity)"

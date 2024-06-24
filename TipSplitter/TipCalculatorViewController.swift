@@ -58,12 +58,19 @@ class TipCalculatorViewController: UIViewController {
         let input = TipCalculatorViewModel.Input(
             billPublisher: billInputView.valuePublisher,
             tipPublisher: tipInputView.valuePublisher,
-            splitPublisher: splitInputView.valuePublisher)
+            splitPublisher: splitInputView.valuePublisher,
+            logoViewTapPublisher: logoViewTapPublisher)
         
         let output = viewModel.transform(input: input)
         
         output.updateViewPublisher.sink { result in
             self.tipResultView.updateView(result: result)
+        }.store(in: &cancellables)
+        
+        output.resetCalculatorPublisher.sink { [unowned self] _ in
+            billInputView.reset()
+            tipInputView.reset()
+            splitInputView.reset()
         }.store(in: &cancellables)
     }
     
