@@ -43,7 +43,7 @@ class TipCalculatorViewController: UIViewController {
             Just(())
         }.eraseToAnyPublisher()
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = ThemeColor.secondaryLighterColor
@@ -71,6 +71,18 @@ class TipCalculatorViewController: UIViewController {
             billInputView.reset()
             tipInputView.reset()
             splitInputView.reset()
+            
+            UIView.animate(withDuration: 0.1,
+                           delay: 0,
+                           usingSpringWithDamping: 5.0,
+                           initialSpringVelocity: 0.5,
+                           options: .curveEaseInOut) {
+                self.logoView.transform = .init(scaleX: 1.5, y: 1.5)
+            } completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    self.logoView.transform = .identity
+                }
+            }
         }.store(in: &cancellables)
     }
     
@@ -84,7 +96,7 @@ class TipCalculatorViewController: UIViewController {
         }.store(in: &cancellables)
     }
     
-    private func addSubviews() {    
+    private func addSubviews() {
         view.addSubview(stackView)
     }
     
