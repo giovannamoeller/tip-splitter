@@ -30,7 +30,7 @@ class TipResultView: UIView {
             ])
         text.addAttributes([
             .font: ThemeFont.titleBold
-        ], range: NSMakeRange(0, 2))
+        ], range: NSMakeRange(0, 1))
         label.attributedText = text
         label.textColor = ThemeColor.textColor
         label.textAlignment = .center
@@ -97,7 +97,7 @@ class TipResultView: UIView {
                                              attributes: [.font: ThemeFont.largeTitleBold])
         text.addAttributes([
             .font: ThemeFont.titleBold
-        ], range: NSMakeRange(0, 2))
+        ], range: NSMakeRange(0, 1))
         amountPerPersonLabel.attributedText = text
         totalBillView.updateView(amount: result.totalBill)
         totalTipView.updateView(amount: result.totalTip)

@@ -30,7 +30,7 @@ class AmountView: UIView {
             ])
         text.addAttributes([
             .font: ThemeFont.bodyBold
-        ], range: NSMakeRange(0, 2))
+        ], range: NSMakeRange(0, 1))
         label.attributedText = text
         label.textColor = ThemeColor.primaryColor
         return label
@@ -76,7 +76,7 @@ class AmountView: UIView {
             ])
         text.addAttributes([
             .font: ThemeFont.bodyBold
-        ], range: NSMakeRange(0, 2))
+        ], range: NSMakeRange(0, 1))
         amountPerPersonLabel.attributedText = text
     }
     
