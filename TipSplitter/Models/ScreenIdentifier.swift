@@ -33,6 +33,6 @@ enum ScreenIdentifier {
     enum SplitInputView: String {
         case decrementButton
         case incrementButton
-        case quantityValueButton
+        case quantityValueLabel
     }
 }
