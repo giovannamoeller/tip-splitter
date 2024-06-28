@@ -9,8 +9,14 @@ import UIKit
 
 class TipResultView: UIView {
     
-    private var totalBillView = AmountView(labelText: "Total bill", amountValueText: 0.0.currencyFormatted)
-    private var totalTipView = AmountView(labelText: "Total tip", amountValueText: 0.0.currencyFormatted, alignment: .trailing)
+    private var totalBillView = AmountView(labelText: "Total bill", 
+                                           amountValueText: 0.0.currencyFormatted,
+                                           amountLabelIdentifier: ScreenIdentifier.ResultView.totalBillValueLabel.rawValue)
+    private var totalTipView = AmountView(labelText: "Total tip",
+                                          amountValueText: 0.0.currencyFormatted,
+                                          alignment: .trailing,
+                                          amountLabelIdentifier: ScreenIdentifier.ResultView.totalTipValueLabel.rawValue
+    )
     
     private lazy var totalPerPersonLabel: UILabel = {
         let label = UILabel()
@@ -34,6 +40,7 @@ class TipResultView: UIView {
         label.attributedText = text
         label.textColor = ThemeColor.textColor
         label.textAlignment = .center
+        label.accessibilityIdentifier = ScreenIdentifier.ResultView.totalAmountPerPersonValueLabel.rawValue
         return label
     }()
     
