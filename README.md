@@ -59,5 +59,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Giovanna Moeller - [@Linkedin](https://linkedin.com/in/giovannamoeller) - contact@giovannamoeller.com
+Giovanna Moeller - [@Linkedin](https://linkedin.com/in/giovannamoeller) - contact@giovannamoeller.com <br/>
 Project Link: [https://github.com/giovannamoeller/tip-splitter](https://github.com/giovannamoeller/tip-splitter)
