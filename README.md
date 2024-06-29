@@ -4,9 +4,9 @@ TipSplitter is an iOS application designed to help users quickly calculate how m
 
 ## Features
 
-- **Dynamic Tip Calculation**: Automatically updates the total per person and total bill including tip as you input values.
-- **Customizable Tip Percentages**: Choose from common percentages or enter a custom tip amount.
-- **Split Flexibility**: Easily increase or decrease the number of people splitting the bill.
+- **Dynamic tip calculation**: Automatically updates the total per person and total bill including tip as you input values.
+- **Customizable tip percentages**: Choose from common percentages or enter a custom tip amount.
+- **Split flexibility**: Easily increase or decrease the number of people splitting the bill.
 - **Interactive UI**: Double-tap the logo to reset all inputs.
 
 ## Installation
@@ -30,7 +30,7 @@ To use the app, start by entering the total bill amount, then select or enter th
 The app utilizes the MVVM (Model-View-ViewModel) design pattern, ensuring clean separation of business logic and user interface components. 
 
 - **View**: Handles the UI components.
-- **ViewModel**: Processes the business logic and state management.
+- **View Model**: Processes the business logic and state management.
 - **Model**: Represents the data structures used by the app.
 
 ## Technologies
