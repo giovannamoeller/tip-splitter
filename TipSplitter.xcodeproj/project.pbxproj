@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		486242562C2B311F003CFDB7 /* TipSplitterSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486242552C2B311F003CFDB7 /* TipSplitterSnapshotTests.swift */; };
+		486242582C2F4EFE003CFDB7 /* ScreenIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486242572C2F4EFE003CFDB7 /* ScreenIdentifier.swift */; };
+		4862425A2C2F500F003CFDB7 /* TipCalculatorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486242592C2F500F003CFDB7 /* TipCalculatorScreen.swift */; };
+		4862425C2C2F53A5003CFDB7 /* ScreenIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486242572C2F4EFE003CFDB7 /* ScreenIdentifier.swift */; };
 		48E3CF8D2C2117A400A31BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CF8C2C2117A400A31BE2 /* AppDelegate.swift */; };
 		48E3CF8F2C2117A400A31BE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CF8E2C2117A400A31BE2 /* SceneDelegate.swift */; };
 		48E3CF912C2117A400A31BE2 /* TipCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3CF902C2117A400A31BE2 /* TipCalculatorViewController.swift */; };
@@ -57,6 +61,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		486242552C2B311F003CFDB7 /* TipSplitterSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSplitterSnapshotTests.swift; sourceTree = "<group>"; };
+		486242572C2F4EFE003CFDB7 /* ScreenIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenIdentifier.swift; sourceTree = "<group>"; };
+		486242592C2F500F003CFDB7 /* TipCalculatorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorScreen.swift; sourceTree = "<group>"; };
 		48E3CF892C2117A400A31BE2 /* TipSplitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipSplitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E3CF8C2C2117A400A31BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E3CF8E2C2117A400A31BE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				48E3CFA32C2117A400A31BE2 /* TipSplitterTests.swift */,
+				486242552C2B311F003CFDB7 /* TipSplitterSnapshotTests.swift */,
 			);
 			path = TipSplitterTests;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			children = (
 				48E3CFAD2C2117A400A31BE2 /* TipSplitterUITests.swift */,
 				48E3CFAF2C2117A400A31BE2 /* TipSplitterUITestsLaunchTests.swift */,
+				486242592C2F500F003CFDB7 /* TipCalculatorScreen.swift */,
 			);
 			path = TipSplitterUITests;
 			sourceTree = "<group>";
@@ -228,6 +237,7 @@
 			children = (
 				48E3CFE92C22270300A31BE2 /* Tip.swift */,
 				48E3CFEE2C22439500A31BE2 /* Result.swift */,
+				486242572C2F4EFE003CFDB7 /* ScreenIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -395,6 +405,7 @@
 				48E3CFD42C211F3E00A31BE2 /* BillInputView.swift in Sources */,
 				48E3CFD02C211F2000A31BE2 /* LogoView.swift in Sources */,
 				48E3CFE72C221D1600A31BE2 /* TipPercentageButton.swift in Sources */,
+				486242582C2F4EFE003CFDB7 /* ScreenIdentifier.swift in Sources */,
 				48E3CFDF2C21B66F00A31BE2 /* AmountView.swift in Sources */,
 				48E3CF8D2C2117A400A31BE2 /* AppDelegate.swift in Sources */,
 				48E3CFDD2C21253600A31BE2 /* ThemeFont.swift in Sources */,
@@ -413,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486242562C2B311F003CFDB7 /* TipSplitterSnapshotTests.swift in Sources */,
 				48E3CFA42C2117A400A31BE2 /* TipSplitterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +433,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4862425C2C2F53A5003CFDB7 /* ScreenIdentifier.swift in Sources */,
+				4862425A2C2F500F003CFDB7 /* TipCalculatorScreen.swift in Sources */,
 				48E3CFAE2C2117A400A31BE2 /* TipSplitterUITests.swift in Sources */,
 				48E3CFB02C2117A400A31BE2 /* TipSplitterUITestsLaunchTests.swift in Sources */,
 			);

@@ -12,6 +12,7 @@ class AmountView: UIView {
     private var labelText: String
     private var amountValueText: String
     private var alignment: UIStackView.Alignment
+    private var amountLabelIdentifier: String
     
     private lazy var totalPerPersonLabel: UILabel = {
         let label = UILabel()
@@ -33,6 +34,7 @@ class AmountView: UIView {
         ], range: NSMakeRange(0, 1))
         label.attributedText = text
         label.textColor = ThemeColor.primaryColor
+        label.accessibilityIdentifier = amountLabelIdentifier
         return label
     }()
     
@@ -44,10 +46,14 @@ class AmountView: UIView {
         return stackView
     }()
 
-    init(labelText: String, amountValueText: String, alignment: UIStackView.Alignment = .leading) {
+    init(labelText: String, 
+         amountValueText: String,
+         alignment: UIStackView.Alignment = .leading,
+         amountLabelIdentifier: String) {
         self.labelText = labelText
         self.amountValueText = amountValueText
         self.alignment = alignment
+        self.amountLabelIdentifier = amountLabelIdentifier
         super.init(frame: .zero)
         addSubviews()
         setupConstraints()

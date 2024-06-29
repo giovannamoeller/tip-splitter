@@ -51,7 +51,7 @@ class TipCalculatorViewModel {
         case .twentyPercent:
             return bill * 0.2
         case .custom(let value):
-            return Double(value)
+            return bill * (Double(value) / 100)
         }
     }
 }
