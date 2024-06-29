@@ -53,7 +53,7 @@ class TipCalculatorScreen {
     }
     
     var tipInputViewCustomTipAlertTextField: XCUIElement {
-        return app.buttons[ScreenIdentifier.TipInputView.customTipAlertTextField.rawValue]
+        return app.textFields[ScreenIdentifier.TipInputView.customTipAlertTextField.rawValue]
     }
     
     var splitInputViewDecrementButton: XCUIElement {
@@ -65,19 +65,18 @@ class TipCalculatorScreen {
     }
     
     var splitInputViewQuantityValueLabel: XCUIElement {
-        return app.buttons[ScreenIdentifier.SplitInputView.quantityValueLabel.rawValue]
+        return app.staticTexts[ScreenIdentifier.SplitInputView.quantityValueLabel.rawValue]
     }
     
     func enterBill(amount: Double) {
         billInputViewTextField.tap()
-        billInputViewTextField.typeText(String(amount))
+        billInputViewTextField.typeText("\(amount)\n")
     }
     
     // Actions
     
     func selectTip(tip: Tip) {
         switch tip {
-        case .none: break
         case .tenPercent:
             tipInputViewTenPercentButton.tap()
         case .fifteenPercent:
@@ -86,8 +85,10 @@ class TipCalculatorScreen {
             tipInputViewTwentyPercentButton.tap()
         case .custom(let value):
             tipInputViewCustomTipPercentButton.tap()
-            XCTAssertTrue(tipInputViewCustomTipAlertTextField.waitForExistence(timeout: 1.0))
-            tipInputViewCustomTipAlertTextField.typeText(String(value))
+            XCTAssertTrue(tipInputViewCustomTipAlertTextField.waitForExistence(timeout: 2.0))
+            tipInputViewCustomTipAlertTextField.typeText("\(value)\n")
+        case .none:
+            break
         }
     }
     
