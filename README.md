@@ -14,7 +14,7 @@ TipSplitter is an iOS application designed to help users quickly calculate how m
 To run TipSplitter, clone this repository and open it in Xcode.
 
 ```bash
-git clone https://github.com/yourusername/TipSplitter.git
+git clone https://github.com/giovannamoeller/tip-splitter.git
 cd TipSplitter
 open TipSplitter.xcodeproj
 ```
